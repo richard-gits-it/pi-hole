@@ -2,7 +2,7 @@
 
 A Pi-hole is a network-wide ad blocker and DNS filter that provides protection for all devices on a network. I decided to build this Pi-hole to block advertisements and malicious domains across my entire home network without needing to configure individual devices. Through this project, I gained hands-on experience with DNS, Linux system administration, LXC containerization, and network integration.
 
-<img width="3604" height="2244" alt="image" src="https://github.com/user-attachments/assets/1f229a96-a2da-4ead-893d-5aad88ff3b0b" />
+<img width="4484" height="3484" alt="image" src="https://github.com/user-attachments/assets/5b9af845-13e6-455f-a72f-4d5c2af6bcdf" />
 
 ## Hardware & Platform
 - Proxmox VE Hypervisor
@@ -27,7 +27,7 @@ I then created an LXC container with the following specifications:
 - **Memory:** 512MB
 - **CPU:** 1 core
 - **Storage:** 8GB
-- **Network:** Static IP (192.168.50.2/24)
+- **Network:** Static IP (192.168.1.2/24)
 
 After the container was created, I accessed the console and updated the system:
 
@@ -59,6 +59,7 @@ After running this command, an installation wizard appeared. This wizard allowed
 - Query logging (enabled for monitoring)
 
 Upon completion, the installer provided my Pi-hole's admin password and confirmed the web interface address: `http://192.168.1.2/admin`
+<img width="558" height="357" alt="image" src="https://github.com/user-attachments/assets/15bdba7b-b78e-4a66-987f-e579db769a87" />
 
 ## Router Configuration
 
@@ -69,6 +70,7 @@ I configured the DNS settings to point to my Pi-hole:
 - **DNS Server 1:** 192.168.1.2 (Pi-hole IP)
 - **DNS Server 2:** (left blank)
 - **Advertise router's IP in addition to user-specified DNS:** No
+<img width="756" height="189" alt="image" src="https://github.com/user-attachments/assets/b7c900be-8f7e-4775-98bc-5611fcd187a0" />
 
 This configuration ensures all devices on my network automatically receive Pi-hole as their DNS server through DHCP, eliminating the need to manually configure each device.
 
@@ -77,6 +79,7 @@ To verify my Pi-hole IP address, I used:
 ```bash
 ip addr show eth0
 ```
+<img width="964" height="142" alt="image" src="https://github.com/user-attachments/assets/63688fbc-f574-4427-a45c-3a72a512950a" />
 
 This displays the network interface configuration and confirms the static IP address assigned to the container.
 
@@ -117,7 +120,8 @@ ipconfig /flushdns
 nslookup google.com
 ```
 
-The `nslookup` command confirmed that DNS queries were being resolved by Pi-hole (192.168.50.2) instead of my ISP's DNS servers.
+The `nslookup` command confirmed that DNS queries were being resolved by Pi-hole (192.168.1.2) instead of my ISP's DNS servers.
+<img width="391" height="172" alt="image" src="https://github.com/user-attachments/assets/910139fb-2671-4e76-8a24-9a189592fc8a" />
 
 I also tested the special Pi-hole domain:
 
@@ -126,20 +130,24 @@ http://pi.hole/admin
 ```
 
 This successfully loaded the Pi-hole dashboard, confirming proper DNS integration.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/83fb24bd-7ab3-4edc-b829-04589ef72c1e" />
 
 Additionally, I visited ad-blocking test sites:
 - canyoublockit.com
-- d3ward.github.io/toolz/adblock.html
+- adblock-tester.com
+<img width="1920" height="947" alt="image" src="https://github.com/user-attachments/assets/ef27c9c0-4150-40a6-9898-230c066ef55b" />
 
 Both sites confirmed high blocking rates, validating that Pi-hole was successfully filtering advertisements and trackers.
 
 ## Results
 
 After 24 hours of operation, my Pi-hole dashboard showed:
-- **Total Queries:** ~12,000+
-- **Queries Blocked:** 3,500+ (approximately 28%)
-- **Domains on Blocklist:** 600,000+
-- **Active Clients:** 8 devices
+- **Total Queries:** ~10,000+
+- **Queries Blocked:** 2,500+ (approximately 26%)
+- **Domains on Blocklist:** 300,000+
+- **Active Clients:** 19 devices
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e68145eb-9482-400f-a27b-d0cc638ac4cc" />
+
 
 I immediately noticed several improvements:
 - No more pop-up advertisements on websites
