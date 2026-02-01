@@ -145,7 +145,7 @@ Both sites confirmed high blocking rates, validating that Pi-hole was successful
 
 ## Results
 
-After 24 hours of operation, my Pi-hole dashboard showed:
+After 2 hours of operation, my Pi-hole dashboard showed:
 - **Total Queries:** ~13,000+
 - **Queries Blocked:** 4,000+ (approximately 30%)
 - **Domains on Blocklist:** 300,000+
