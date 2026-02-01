@@ -146,13 +146,12 @@ Both sites confirmed high blocking rates, validating that Pi-hole was successful
 ## Results
 
 After 24 hours of operation, my Pi-hole dashboard showed:
-- **Total Queries:** ~10,000+
-- **Queries Blocked:** 2,500+ (approximately 26%)
+- **Total Queries:** ~13,000+
+- **Queries Blocked:** 4,000+ (approximately 30%)
 - **Domains on Blocklist:** 300,000+
 - **Active Clients:** 19 devices
-- 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e68145eb-9482-400f-a27b-d0cc638ac4cc" />
-
+  
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/c3414cba-58f5-4e2b-8257-3d024f5f15ea" />
 
 I immediately noticed several improvements:
 - No more pop-up advertisements on websites
