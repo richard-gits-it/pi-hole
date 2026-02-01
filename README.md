@@ -59,6 +59,7 @@ After running this command, an installation wizard appeared. This wizard allowed
 - Query logging (enabled for monitoring)
 
 Upon completion, the installer provided my Pi-hole's admin password and confirmed the web interface address: `http://192.168.1.2/admin`
+
 <img width="558" height="357" alt="image" src="https://github.com/user-attachments/assets/15bdba7b-b78e-4a66-987f-e579db769a87" />
 
 ## Router Configuration
@@ -70,6 +71,7 @@ I configured the DNS settings to point to my Pi-hole:
 - **DNS Server 1:** 192.168.1.2 (Pi-hole IP)
 - **DNS Server 2:** (left blank)
 - **Advertise router's IP in addition to user-specified DNS:** No
+  
 <img width="756" height="189" alt="image" src="https://github.com/user-attachments/assets/b7c900be-8f7e-4775-98bc-5611fcd187a0" />
 
 This configuration ensures all devices on my network automatically receive Pi-hole as their DNS server through DHCP, eliminating the need to manually configure each device.
@@ -130,11 +132,13 @@ http://pi.hole/admin
 ```
 
 This successfully loaded the Pi-hole dashboard, confirming proper DNS integration.
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/83fb24bd-7ab3-4edc-b829-04589ef72c1e" />
 
 Additionally, I visited ad-blocking test sites:
 - canyoublockit.com
 - adblock-tester.com
+  
 <img width="1920" height="947" alt="image" src="https://github.com/user-attachments/assets/ef27c9c0-4150-40a6-9898-230c066ef55b" />
 
 Both sites confirmed high blocking rates, validating that Pi-hole was successfully filtering advertisements and trackers.
@@ -146,6 +150,7 @@ After 24 hours of operation, my Pi-hole dashboard showed:
 - **Queries Blocked:** 2,500+ (approximately 26%)
 - **Domains on Blocklist:** 300,000+
 - **Active Clients:** 19 devices
+- 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e68145eb-9482-400f-a27b-d0cc638ac4cc" />
 
 
